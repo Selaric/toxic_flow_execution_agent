@@ -85,7 +85,12 @@ To conclude the research workflow, an independent **Adaptive Toxicity Execution 
 
 A side-by-side empirical backtest generated the following diagnostic profile:
 
-============================================================ PHASE 6: MICROSTRUCTURAL BACKTEST & DIAGNOSTICS ===Benchmark Arrival Price: $585.5100--- 1. Implementation Shortfall (IS) ---Naive TWAP Shortfall:      $797.00 (13.61 bps)Adaptive Trader Shortfall: $770.83 (13.17 bps)Net Alpha Generated:       $26.17--- 2. Adverse Selection --- Adaptive Fills Avg Adverse Slippage: $ 0.0925 Total Paused Slices due to Toxic Flow: 30 trades --- 3. Market Regime Analysis ---Toxicity Pauses triggered in High-Vol Regimes: 100.00%Toxicity Pauses triggered in Low-Vol Regimes:  100.00%
+============================================================ 
+PHASE 6: MICROSTRUCTURAL BACKTEST & DIAGNOSTICS
+===Benchmark Arrival Price: $585.5100
+--- 1. Implementation Shortfall (IS) ---Naive TWAP Shortfall:      $797.00 (13.61 bps)Adaptive Trader Shortfall: $770.83 (13.17 bps)Net Alpha Generated:       $26.17
+--- 2. Adverse Selection --- Adaptive Fills Avg Adverse Slippage: $ 0.0925 Total Paused Slices due to Toxic Flow: 30 trades 
+--- 3. Market Regime Analysis ---Toxicity Pauses triggered in High-Vol Regimes: 100.00%Toxicity Pauses triggered in Low-Vol Regimes:  100.00%
 ### 6.1 Critical Diagnostic Findings
 - **Alpha Capture:** The Adaptive Toxicity Trader **successfully beat the blind TWAP baseline**, capturing **\$26.17 in net alpha** and reducing execution slippage from 13.61 bps to 13.17 bps. 
 - **The Threshold Calibration Bound (Live Bug Identify):** Because the hardcoded decision threshold was set to `0.24` while the model's median validation probability hovered around `0.237`, the execution engine triggered a `PAUSE` on 100% of the 30 trades. 
